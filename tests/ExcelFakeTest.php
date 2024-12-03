@@ -121,7 +121,7 @@ class ExcelFakeTest extends TestCase
         ExcelFacade::matchByRegex();
         ExcelFacade::assertQueued('/\w{6}-\w{8}\.csv/', 's3');
     }
-
+ $this->assertInstanceOf(BinaryFileResponse::class, $response);
     public function test_can_assert_against_a_fake_queued_export_with_chain()
     {
         ExcelFacade::fake();
